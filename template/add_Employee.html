@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Add Employee{% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-around my-5">
+        <div class="col-sm-6">
+            <h1 class="text-white text-center">Add Employee Record</h1>
+        </div>
+    </div>
+    <div class="row my-3 justify-content-around">
+        <div class="col-sm-6">
+            <form action="" method="post" class="bg-white p-3 rounded" enctype="multipart/form-data">
+                
+                {% csrf_token %}
+                {{form.as_p}}
+
+            <input type="submit" value="Add Records" class="btn btn-primary my-5">
+
+            </form>
+        <div class="alert alert-success">
+                <strong>Success!</strong> Added Successfully.
+        </div>   
+        </div>
+    </div>
+</div>    
+{% endblock content %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Employee Details{% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-around my-5">
+        <div class="col-sm-8">
+            <h1 class="text-white text-center">Welcome to Employee Management System</h1>
+        </div>
+    </div>
+    
+    <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Sr.No.</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email Id</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Address</th>
+            <th scope="col">Blood_Group</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for employee in Employee_data %}
+          <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{employee.First_name}}</td>
+            <td>{{employee.last_name}}</td>
+            <td>{{employee.EmailId}}</td>
+            <td>{{employee.Mobile}}</td>
+            <td>{{employee.Address}}</td>
+            <td>{{employee.Blood_Group}}</td>
+          {% endfor %}
+
+        </tbody>
+      </table>
+</div>
+<!-- Icon cards-->
+{% endblock content %}
